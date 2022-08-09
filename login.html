@@ -1,0 +1,69 @@
+<html>
+<title>LOGIN PAGE</title>
+<style>
+    .div1 {
+        margin: 100px 580px;
+        border: 1px outset white;
+        background: white;
+        border-radius: 15px
+    }
+
+    .in {
+        width: 300;
+        height: 45;
+        color: BLACK;
+        background-color: lightgray;
+        font-size: 25px;
+        border-radius: 5px;
+        BORDER: 1PX OUTSET BLACK;
+    }
+
+    .button {
+        width: 75;
+        height: 40;
+        background-color: LIGHTGREEN;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px outset black;
+        margin-left: 40%;
+        margin-top: 1%;
+        margin-bottom:5% ;
+        cursor: pointer;
+    }
+    *{
+        font-family: Corbel;
+        font-weight: bolder;
+    }
+</style>
+
+<body style=" background: linear-gradient(to bottom, #ccccff 0%, #ffccff 100%);">
+    <script>
+        function validate() {
+            if (myform.name.value == "user" && myform.pass.value == "pass") {
+                window.open("file:///D:/HK/SPORTS%20SHOP/index.html#");
+            }
+            else {
+                document.getElementById("Print").innerHTML = "*Invalid password or Username";
+            }
+        }
+    </script>
+    <div class="div1">
+        <H3 style="text-align: center;">LOGIN</H3>
+        <div style="margin: 0px 20px;">
+            <P id="Print" style="color: rgb(250, 68, 68);text-align: center;font-weight: bold;"></P>
+            <form name="myform">
+                <h3>USER NAME</h3>
+                <input class="in" name="name" required>
+                <h3>PASSWORD</h3>
+                <input type="password" class="in" name="pass" required>
+        </div><BR>
+        <p style="margin:0px 20px;">
+            <INPUT TYPE="checkbox">Remember me <span style="float:right;"><a href="forget">Forgot
+                    Password?</a></span><br>
+        </p>
+        <input type="button" value="LOGIN" onclick="validate()" class="button">
+        </form>
+    </div>
+</body>
+
+</html>
