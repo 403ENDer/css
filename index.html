@@ -1,0 +1,92 @@
+<html>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+
+<body>
+    <div id="main">
+        <div style="float: left;">
+            <h1 style="cursor:pointer; margin: 1%; padding: -100% 10px;" onclick="openNav()">&#9776;
+        </div>
+        <div style="font-size: 23px;font-weight: 100;">
+            <ul class="ul-h">
+                <li class="li-h"></li>
+                <li class="li-h"><a class="active" href="#">Home</a></li>
+                <li class="li-h"><a href="#">Cart</a></li>
+                <li class="li-h"><a href="#" onclick="openlogin()" id="log">Login</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                    <div class="dropdown-content">
+                        <a href="#" class="inside">Link 1</a>
+                        <a href="#" class="inside">Link 2</a>
+                        <a href="#" class="inside">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="login" id="login">
+        
+            <H3 style="text-align: center;">LOGIN</H3>
+            <a href="javascript:void(0)" class="closebtn" onclick="closelogin()">&times;</a>
+            <div style="margin: 0px 20px;">
+                <P id="Print" style="color: rgb(250, 68, 68);text-align: center;font-weight: bold;"></P>
+                <form name="myform">
+                    <h3>USER NAME</h3>
+                    <input class="in" name="name" required>
+                    <h3>PASSWORD</h3>
+                    <input type="password" class="in" name="pass" required>
+            </div><BR>
+            <p style="margin:0px 20px;">
+                <INPUT TYPE="checkbox">Remember me <span style="float:right;"><a href="forget" class="forget">Forgot
+                        Password?</a></span><br>
+            </p>
+            <input type="button" value="LOGIN" onclick="validate()" class="button">
+            </form>
+      
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <script>
+        function openlogin(){
+            document.getElementById("login").style.width = "25%";
+            document.getElementById("main").style.marginLeft = "25%";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.1)";
+        }
+        function closelogin() {
+            document.getElementById("login").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+        function validate() {
+            if (myform.name.value == "user" && myform.pass.value == "pass") {
+                document.getElementById("log").innerHTML = myform.name.value;
+                closelogin();
+            }
+            else {
+                document.getElementById("Print").innerHTML = "*Invalid password or Username";
+            }
+        }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.1)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+</body>
+
+</html>
